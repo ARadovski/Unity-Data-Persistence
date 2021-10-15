@@ -13,6 +13,7 @@ public class MainManager : MonoBehaviour
     
     public int highScore;
     public string playerName;
+    public string highPlayerName;
 
     private string nameField;
 
