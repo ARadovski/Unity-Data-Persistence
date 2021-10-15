@@ -11,10 +11,12 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
     
-    public int score;
+    public int highScore;
     public string playerName;
 
-    public Text inputNameText;
+    private string nameField;
+
+    private Canvas canvas;
 
     private void Awake() {
 
@@ -24,10 +26,20 @@ public class MainManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        // nameField = canvas.transform.Find("NameInputField").GetComponent<InputField>().text;
+        // Debug.Log(nameField);
+    }
+
+    private void Start() 
+    {
+        playerName = nameField;
     }
 
     public void StartGame()
     {
+        SetPlayerName();
         SceneManager.LoadScene(1);
     }
 
@@ -41,6 +53,10 @@ public class MainManager : MonoBehaviour
     }
 
     public void SetPlayerName(){
-        playerName = inputNameText.text;
+        
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        nameField = canvas.transform.Find("NameInputField").GetComponent<InputField>().text;
+
+        playerName = nameField;
     }
 }

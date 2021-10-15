@@ -16,6 +16,8 @@ public class GameplayManager : MonoBehaviour
     private bool m_Started = false;
     
     private bool m_GameOver = false;
+
+    private int score;
     
     // Start is called before the first frame update
     void Start()
@@ -62,8 +64,8 @@ public class GameplayManager : MonoBehaviour
 
     void AddPoint(int point)
     {
-        MainManager.Instance.score += point;
-        ScoreText.text = $"Score : {MainManager.Instance.playerName} : {MainManager.Instance.score}";
+        score += point;
+        ScoreText.text = $"Score : {MainManager.Instance.playerName} : {score}";
     }
 
     public void GameOver()
