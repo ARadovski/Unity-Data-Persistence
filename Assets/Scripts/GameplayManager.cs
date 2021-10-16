@@ -39,7 +39,7 @@ public class GameplayManager : MonoBehaviour
         }
 
         ScoreText.text = $"Score : {MainManager.Instance.playerName} : {score}";
-        highScoreText.text = $"Score : {MainManager.Instance.highPlayerName} : {MainManager.Instance.highScore}";
+        highScoreText.text = $"High Score : {MainManager.Instance.highPlayerName} : {MainManager.Instance.highScore}";
     }
 
     private void Update()
